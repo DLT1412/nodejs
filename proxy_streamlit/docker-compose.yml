@@ -1,0 +1,14 @@
+version: '3'
+services:
+  express_proxy:
+    image: "express_proxy"
+    restart: always
+    ports:
+      - "5001:8080"
+    depends_on:
+      - "streamlit"
+  streamlit:
+    image: "streamlit"
+    restart: always
+    ports:
+      - "8501:8501"
